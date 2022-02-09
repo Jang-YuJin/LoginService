@@ -17,7 +17,7 @@ public class UserServiceImpl implements UserService {
 		userDTOs[0] = new UserDTO("admin", "admin@", "관리자", 365);
 		//user1부터 userCnt까지
 		for(int i = 1; i < userDTOs.length; i++) {
-			userDTOs[i] = new UserDTO("admin" + i, "admin"+ i + "@", "사용자" + i, i);
+			userDTOs[i] = new UserDTO("user" + i, "user"+ i + "@", "사용자" + i, i);
 		}
 //		printArray(userDTOs);//TODO debug
 	}

@@ -7,4 +7,5 @@ public interface UserService {
 	public UserDTO selectUser(UserDTO userDTO);//DB에 가지고 옴
 	//service -> controler에서
 	public UserDTO getUserInfo(UserDTO userDTO);
+	
 }

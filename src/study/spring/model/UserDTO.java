@@ -38,4 +38,9 @@ public class UserDTO {
 	public void setExpiredDays(int expiredDays) {
 		this.expiredDays = expiredDays;
 	}
+	@Override
+	public String toString() {
+		return "UserDTO [id=" + id + ", password=" + password + ", nickName=" + nickName + ", expiredDays="
+				+ expiredDays + "]";
+	}
 }
