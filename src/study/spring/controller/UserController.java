@@ -1,11 +1,12 @@
 package study.spring.controller;
 
+import study.spring.exception.UserException;
 import study.spring.model.UserDTO;
 import study.spring.service.UserService;
 import study.spring.service.UserServiceImpl;
 
 public class UserController {
-	public boolean login(UserDTO userDTO){
+	public boolean login(UserDTO userDTO) throws UserException{
 		boolean result = false;
 		//UserService getUserInfo 호출, getUserInfo는 selectUser호출해서 검색해서 UserControllerdml login에 던져줌
 		UserService us = new UserServiceImpl(10);
@@ -25,9 +26,11 @@ public class UserController {
 			}else {
 //				System.out.println("login false");//TODO debug
 				result = false;
+				throw new UserException("UI404 - 회원정보 오류");
 			}
 		}else {
 			result = false;
+			throw new UserException("UI404 - 회원정보 오류");
 		}
 		
 		/*

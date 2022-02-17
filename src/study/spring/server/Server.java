@@ -1,6 +1,7 @@
 package study.spring.server;
 
 import study.spring.controller.UserController;
+import study.spring.exception.UserException;
 import study.spring.model.UserDTO;
 
 public class Server {
@@ -18,15 +19,15 @@ public class Server {
 		
 		//로그인 버튼 클릭(동작)
 		UserController uc = new UserController();
-		boolean result = uc.login(userDTO);
-
-		//조건문 나옴(로그인 성공이냐 실패냐에 따라)
-		if(result) {
+		boolean result = false;
+		try {
+			result = uc.login(userDTO);
 			System.out.println("로그인 성공");
-		}else {
+		} catch (UserException e) {
 			System.out.println("로그인 실패");
+			e.printStackTrace();
 		}
-		
+
 		
 		//회원가입 -> join 호출 -> Controller에 있음
 	}
